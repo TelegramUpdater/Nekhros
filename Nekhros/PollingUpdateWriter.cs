@@ -15,7 +15,9 @@ namespace Nekhros
 
         public override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            Logger.LogInformation("Getting updates from my manual writer using Polling extesion.");
+            Logger.LogInformation(
+                "Getting updates from my manual writer using Polling extension."
+            );
 
             var receiverOptions = new ReceiverOptions
             {
@@ -38,16 +40,19 @@ namespace Nekhros
             }
         }
 
-        async Task HandleUpdateAsync(ITelegramBotClient _, Update update, CancellationToken cancellationToken)
-        {
-            await EnqueueUpdateAsync(update, cancellationToken);
-        }
+        async Task HandleUpdateAsync(ITelegramBotClient _,
+                                     Update update,
+                                     CancellationToken cancellationToken)
+            => await EnqueueUpdateAsync(update, cancellationToken);
 
-        Task HandleErrorAsync(ITelegramBotClient _, Exception exception, CancellationToken cancellationToken)
+        Task HandleErrorAsync(ITelegramBotClient _,
+                              Exception exception,
+                              CancellationToken cancellationToken)
         {
             if (exception is ApiRequestException apiRequestException)
             {
-                Updater.Logger.LogError(exception: apiRequestException, message: "Error in MyManualWriter");
+                Updater.Logger.LogError(exception: apiRequestException,
+                                        message: "Error in MyManualWriter");
             }
             return Task.CompletedTask;
         }

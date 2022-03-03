@@ -63,7 +63,7 @@ namespace Nekhros.Resources.UpdateHandlers.Messages {
         /// <summary>
         ///   Looks up a localized string similar to Welcome {0} to the TU Talkings!
         ///
-        ///I&apos;m glad to see you here, please stay kind and cool ;).
+        ///I&apos;m glad to see you here, please stay kind and cool..
         /// </summary>
         internal static string WelcomeMessage {
             get {

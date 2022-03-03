@@ -61,7 +61,9 @@ namespace Nekhros.Resources.UpdateHandlers.Messages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hooray! {0} you&apos;ve started me ....
+        ///   Looks up a localized string similar to Hello {name}, i&apos;m Nekhros. 
+        ///
+        ///I&apos;m a management assistance at @TUTalkings chat. You can checkout my source code in: https://github.com/TelegramUpdater/Nekhros. I&apos;m a real world example of TelegramUpdater package ( https://github.com/TelegramUpdater/TelegramUpdater ).
         /// </summary>
         internal static string StartMessage {
             get {

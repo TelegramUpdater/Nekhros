@@ -118,6 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="StartMessage" xml:space="preserve">
-    <value>Hooray! {0} you've started me ...</value>
+    <value>Hello {name}, i'm Nekhros. 
+
+I'm a management assistance at @TUTalkings chat. You can checkout my source code in: https://github.com/TelegramUpdater/Nekhros. I'm a real world example of TelegramUpdater package ( https://github.com/TelegramUpdater/TelegramUpdater )</value>
   </data>
 </root>

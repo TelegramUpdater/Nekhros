@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Localization;
 using Nekhros.MyCustomAttributes;
+using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using TelegramUpdater.FilterAttributes.Attributes;
@@ -25,9 +26,12 @@ namespace Nekhros.UpdateHandlers.Messages
         {
             var newUsers = cntr.Update.NewChatMembers;
 
+            await cntr.Delete().TryExecute<ApiRequestException>();
+
             foreach (var user in newUsers!)
             {
-                await cntr.Response(_localizer.GetString("WelcomeMessage", user.FirstName));
+                await cntr.Response(
+                    _localizer.GetString("WelcomeMessage", user.FirstName));
             }
         }
     }
