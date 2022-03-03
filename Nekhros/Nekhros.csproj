@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="7.0.0-preview.1.22076.8" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0-preview.1.22076.8" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Systemd" Version="7.0.0-preview.1.22076.8" />
 	<PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.0-preview.1.22109.13" />
     <PackageReference Include="Telegram.Bot" Version="17.0.0" />
     <PackageReference Include="Telegram.Bot.Extensions.Polling" Version="1.0.2" />
