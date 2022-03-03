@@ -1,2 +1,2 @@
 # Nekhros
-Nekhros is a managment assistans bot!
+Nekhros is a managment assistans bot
