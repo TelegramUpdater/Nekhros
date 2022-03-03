@@ -10,9 +10,34 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="7.0.0-preview.1.22076.8" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0-preview.1.22076.8" />
+	<PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.0-preview.1.22109.13" />
     <PackageReference Include="Telegram.Bot" Version="17.0.0" />
     <PackageReference Include="Telegram.Bot.Extensions.Polling" Version="1.0.2" />
     <PackageReference Include="TelegramUpdater" Version="1.3.5-alpha" />
     <PackageReference Include="TelegramUpdater.Hosting" Version="1.3.2-alpha" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\UpdateHandlers\Messages\Start.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Start.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\UpdateHandlers\Messages\Welcome.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Welcome.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\UpdateHandlers\Messages\Start.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Start.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\UpdateHandlers\Messages\Welcome.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Welcome.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

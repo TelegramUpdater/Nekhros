@@ -13,6 +13,11 @@ IHost host = Host.CreateDefaultBuilder(args)
             builder => builder
                 .AddDefaultExceptionHandler()
                 .AutoCollectScopedHandlers());
+
+        services.AddLocalization(options =>
+        {
+            options.ResourcesPath = "Resources";
+        });
     })
     .Build();
 
