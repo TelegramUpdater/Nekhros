@@ -8,6 +8,9 @@ using TelegramUpdater.UpdateHandlers.ScopedHandlers.ReadyToUse;
 
 namespace Nekhros.UpdateHandlers.Messages
 {
+    /// <summary>
+    /// Here i send welcome message to newly joined user to a group.
+    /// </summary>
     [MessageType(MessageType.ChatMembersAdded), Group]
     internal sealed class Welcome : ScopedMessageHandler
     {
