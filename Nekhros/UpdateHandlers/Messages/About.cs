@@ -5,7 +5,7 @@ using TelegramUpdater.UpdateHandlers.Scoped.ReadyToUse;
 
 namespace Nekhros.UpdateHandlers.Messages
 {
-    [Command("about"), Private]
+    [Command("about", "Read more about me.", 1), Private]
     internal sealed class About : MessageHandler
     {
         protected override async Task HandleAsync(IContainer<Message> cntr)

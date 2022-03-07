@@ -15,6 +15,8 @@ IHost host = Host.CreateDefaultBuilder(args)
                 .AddDefaultExceptionHandler()
                 .AutoCollectScopedHandlers());
 
+        services.AddHostedService<ConfigureUpdater>();
+
         services.AddLocalization(options =>
         {
             options.ResourcesPath = "Resources";

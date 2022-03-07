@@ -6,7 +6,7 @@ using TelegramUpdater.UpdateHandlers.Scoped.ReadyToUse;
 
 namespace Nekhros.UpdateHandlers.Messages
 {
-    [Command("start"), Private]
+    [Command("start", "Start me.", 0), Private]
     internal sealed class Start : MessageHandler
     {
         private readonly IStringLocalizer<Start> _localizer;
@@ -19,7 +19,8 @@ namespace Nekhros.UpdateHandlers.Messages
         protected override async Task HandleAsync(IContainer<Message> cntr)
         {
             await cntr.Response(
-                _localizer.GetString("StartMessage", cntr.Sender()!.FirstName));
+                _localizer.GetString("StartMessage", cntr.Sender()!.FirstName),
+                disableWebpagePreview: true);
         }
     }
 }
