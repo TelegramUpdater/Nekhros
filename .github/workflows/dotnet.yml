@@ -1,0 +1,20 @@
+name: .NET
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Stop Nekhros.
+      run: sudo systemctl stop Nekhros.service
+    - name: Publish files
+      run: dotnet publish -r linux-x64 --self-contained false -o ~/NekhrosRunning
+    - name: Start Nekhros
+      run: sudo systemctl start Nekhros.service
