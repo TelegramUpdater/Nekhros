@@ -2,12 +2,12 @@
 using Telegram.Bot.Types;
 using TelegramUpdater.FilterAttributes.Attributes;
 using TelegramUpdater.UpdateContainer;
-using TelegramUpdater.UpdateHandlers.ScopedHandlers.ReadyToUse;
+using TelegramUpdater.UpdateHandlers.Scoped.ReadyToUse;
 
 namespace Nekhros.UpdateHandlers.Messages
 {
     [Command("start"), Private]
-    internal sealed class Start : ScopedMessageHandler
+    internal sealed class Start : MessageHandler
     {
         private readonly IStringLocalizer<Start> _localizer;
 

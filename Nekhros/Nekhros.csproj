@@ -14,8 +14,8 @@
 	<PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.0-preview.1.22109.13" />
     <PackageReference Include="Telegram.Bot" Version="17.0.0" />
     <PackageReference Include="Telegram.Bot.Extensions.Polling" Version="1.0.2" />
-    <PackageReference Include="TelegramUpdater" Version="1.3.5-alpha" />
-    <PackageReference Include="TelegramUpdater.Hosting" Version="1.3.2-alpha" />
+    <PackageReference Include="TelegramUpdater" Version="1.4.0-preview.1.2" />
+    <PackageReference Include="TelegramUpdater.Hosting" Version="1.4.0-preview.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -49,5 +49,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Welcome.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="MyCustomAttributes\" />
   </ItemGroup>
 </Project>

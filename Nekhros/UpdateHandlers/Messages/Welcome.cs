@@ -1,11 +1,10 @@
 ﻿using Microsoft.Extensions.Localization;
-using Nekhros.MyCustomAttributes;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using TelegramUpdater.FilterAttributes.Attributes;
 using TelegramUpdater.UpdateContainer;
-using TelegramUpdater.UpdateHandlers.ScopedHandlers.ReadyToUse;
+using TelegramUpdater.UpdateHandlers.Scoped.ReadyToUse;
 
 namespace Nekhros.UpdateHandlers.Messages
 {
@@ -13,7 +12,7 @@ namespace Nekhros.UpdateHandlers.Messages
     /// Here i send welcome message to newly joined user to a group.
     /// </summary>
     [MessageType(MessageType.ChatMembersAdded), Group]
-    internal sealed class Welcome : ScopedMessageHandler
+    internal sealed class Welcome : MessageHandler
     {
         private readonly IStringLocalizer<Welcome> _localizer;
 
