@@ -12,9 +12,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Stop Nekhros.
+    - name: 🔨 Stop Nekhros.
       run: sudo systemctl stop Nekhros.service
-    - name: Publish files
+
+    - name: 🧹 Cleanup publish dir
+      run: rm -rf ~/NekhrosRunning/*
+
+    - name: 🍳 Publish files
       run: dotnet publish -r linux-x64 --self-contained false -o ~/NekhrosRunning
-    - name: Start Nekhros
+
+    - name: 🍿 Start Nekhros
       run: sudo systemctl start Nekhros.service

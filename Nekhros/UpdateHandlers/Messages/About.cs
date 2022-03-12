@@ -10,7 +10,7 @@ namespace Nekhros.UpdateHandlers.Messages
     {
         protected override async Task HandleAsync(IContainer<Message> cntr)
         {
-            await cntr.ResponseAsync("About Us.");
+            await cntr.ResponseAsync("This is all about Us!");
         }
     }
 }
