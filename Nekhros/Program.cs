@@ -2,7 +2,7 @@ using Nekhros;
 using TelegramUpdater.Hosting;
 
 IHost host = Host.CreateDefaultBuilder(args)
-    // .UseSystemd()
+    .UseSystemd()
     .ConfigureServices((context, services) =>
     {
         var botToken = "5146786055:AAG1Jxm6ISmNWWvcgE6hb0GT8c5myr7tyGE";
