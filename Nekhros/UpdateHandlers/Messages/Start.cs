@@ -18,7 +18,7 @@ namespace Nekhros.UpdateHandlers.Messages
 
         protected override async Task HandleAsync(IContainer<Message> cntr)
         {
-            await cntr.Response(
+            await cntr.ResponseAsync(
                 _localizer.GetString("StartMessage", cntr.Sender()!.FirstName),
                 disableWebpagePreview: true);
         }
