@@ -29,6 +29,9 @@ namespace Nekhros.UpdateHandlers.Messages
 
             foreach (var user in newUsers!)
             {
+                if (user.Id == BotClient.BotId)
+                    continue;
+
                 await cntr.ResponseAsync(
                     _localizer.GetString("WelcomeMessage", user.FirstName));
             }
