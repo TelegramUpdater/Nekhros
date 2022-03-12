@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="WelcomeMessage" xml:space="preserve">
-    <value>Welcome {0} to the TU Talkings!
+    <value>Welcome {0}!
 
 I'm glad to see you here, please stay kind and cool.</value>
   </data>
