@@ -26,6 +26,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>SharedResource.resx</DependentUpon>
     </Compile>
+    <Compile Update="Resources\UpdateHandlers\Messages\About.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>About.resx</DependentUpon>
+    </Compile>
     <Compile Update="Resources\UpdateHandlers\Messages\Start.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -42,6 +47,10 @@
     <EmbeddedResource Update="Resources\SharedResource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SharedResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\UpdateHandlers\Messages\About.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>About.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\UpdateHandlers\Messages\Start.resx">
       <Generator>ResXFileCodeGenerator</Generator>
