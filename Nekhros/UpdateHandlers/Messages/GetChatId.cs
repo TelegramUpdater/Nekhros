@@ -8,6 +8,7 @@ namespace Nekhros.UpdateHandlers.Messages
 {
     [
         Command("chatid", "Get chat id.", 1,
+            botUsername: "NekhrosBot",
             botCommandScopeType: BotCommandScopeType.AllGroupChats),
         Group
     ]

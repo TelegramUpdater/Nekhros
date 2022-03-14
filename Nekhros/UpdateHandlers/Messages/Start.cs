@@ -1,12 +1,17 @@
 ﻿using Microsoft.Extensions.Localization;
 using Telegram.Bot.Types;
+using Telegram.Bot.Types.Enums;
 using TelegramUpdater.FilterAttributes.Attributes;
 using TelegramUpdater.UpdateContainer;
 using TelegramUpdater.UpdateHandlers.Scoped.ReadyToUse;
 
 namespace Nekhros.UpdateHandlers.Messages
 {
-    [Command("start", "Start me.", 0), Private]
+    [
+        Command("start", "Start me.", 0,
+            botCommandScopeType: BotCommandScopeType.AllPrivateChats),
+        Private
+    ]
     internal sealed class Start : MessageHandler
     {
         private readonly IStringLocalizer<Start> _localizer;
