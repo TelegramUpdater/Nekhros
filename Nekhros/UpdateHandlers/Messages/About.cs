@@ -14,9 +14,9 @@ namespace Nekhros.UpdateHandlers.Messages
     ]
     internal sealed class About : MessageHandler
     {
-        private readonly IStringLocalizer<Start> _localizer;
+        private readonly IStringLocalizer<About> _localizer;
 
-        public About(IStringLocalizer<Start> localizer)
+        public About(IStringLocalizer<About> localizer)
         {
             _localizer = localizer;
         }
