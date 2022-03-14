@@ -14,9 +14,11 @@ namespace Nekhros.UpdateHandlers.Messages
     ]
     internal sealed class GetChatId : MessageHandler
     {
-        protected override async Task HandleAsync(IContainer<Message> cntr)
+        protected override async Task HandleAsync(IContainer<Message> _)
         {
-            await cntr.ResponseAsync(cntr.Update.Chat.Id.ToString());
+            await ResponseAsync(
+                Chat.Id.ToString().ToHtmlCode(),
+                parseMode: ParseMode.Html);
         }
     }
 }
