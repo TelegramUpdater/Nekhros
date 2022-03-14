@@ -5,7 +5,7 @@ IHost host = Host.CreateDefaultBuilder(args)
     .UseSystemd()
     .ConfigureServices((context, services) =>
     {
-        var botToken = context.Configuration.GetSection("BotToken").Get<string>();
+        var botToken = context.Configuration["BotToken"];
 
         if (botToken == null)
             throw new Exception("Woooah where is your bot token?");
