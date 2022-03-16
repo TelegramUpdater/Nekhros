@@ -29,6 +29,9 @@ namespace Nekhros.UpdateHandlers.Messages
                 var message = await _tephrosClient.SendTextMessageAsync(
                     Chat.Id, $"That's my turn: {Chat.Id.ToString().ToHtmlCode()}");
 
+                await BotClient.SendChatActionAsync(Chat.Id, ChatAction.Typing);
+                await Task.Delay(2000);
+
                 await BotClient.SendTextMessageAsync(
                     Chat.Id, "...",
                     replyToMessageId: message.MessageId,
@@ -42,6 +45,9 @@ namespace Nekhros.UpdateHandlers.Messages
 
                 if (_tephrosClient.ShellTephrosAnswer)
                 {
+                    await _tephrosClient.SendChatActionAsync(Chat.Id, ChatAction.Typing);
+                    await Task.Delay(2000);
+
                     await _tephrosClient.SendTextMessageAsync(
                         Chat.Id, "Bravo, what a smart Nekhros )",
                         replyToMessageId: message.MessageId,
