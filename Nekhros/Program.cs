@@ -1,16 +1,25 @@
 using Nekhros;
+using Nekhros.Clients;
 using TelegramUpdater.Hosting;
 
 IHost host = Host.CreateDefaultBuilder(args)
     .UseSystemd()
     .ConfigureServices((context, services) =>
     {
-        var botToken = context.Configuration["BotToken"];
+        var nekhrosToken = context.Configuration["NekhrosToken"];
+        var tephrosToken = context.Configuration["TephrosToken"];
 
-        if (botToken == null)
-            throw new Exception("Woooah where is your bot token?");
+        if (nekhrosToken == null)
+            throw new Exception("Woooah where is your Nekhros token?");
 
-        services.AddTelegramUpdater<PollingUpdateWriter>(botToken, default,
+        if (tephrosToken == null)
+            throw new Exception("Woooah where is your Tephros token?");
+
+        services.AddHttpClient("tephrosClient")
+            .AddTypedClient(httpClient =>
+                new TephrosClient(tephrosToken));
+
+        services.AddTelegramUpdater<PollingUpdateWriter>(nekhrosToken, default,
             builder => builder
                 .AddDefaultExceptionHandler()
                 .AutoCollectScopedHandlers());
