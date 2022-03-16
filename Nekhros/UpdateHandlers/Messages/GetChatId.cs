@@ -1,3 +1,4 @@
+using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using TelegramUpdater.FilterAttributes.Attributes;
@@ -14,11 +15,39 @@ namespace Nekhros.UpdateHandlers.Messages
     ]
     internal sealed class GetChatId : MessageHandler
     {
+        private readonly TephrosClient _tephrosClient;
+
+        public GetChatId(TephrosClient tephrosClient)
+        {
+            _tephrosClient = tephrosClient;
+        }
+
         protected override async Task HandleAsync(IContainer<Message> _)
         {
-            await ResponseAsync(
-                Chat.Id.ToString().ToHtmlCode(),
-                parseMode: ParseMode.Html);
+            if (_tephrosClient.ShellTephrosAnswer)
+            {
+                var message = await _tephrosClient.SendTextMessageAsync(
+                    Chat.Id, $"That's my turn: {Chat.Id.ToString().ToHtmlCode()}");
+
+                await BotClient.SendTextMessageAsync(
+                    Chat.Id, "...",
+                    replyToMessageId: message.MessageId,
+                    allowSendingWithoutReply: true);
+            }
+            else
+            {
+                var message = await ResponseAsync(
+                    Chat.Id.ToString().ToHtmlCode(),
+                    parseMode: ParseMode.Html);
+
+                if (_tephrosClient.ShellTephrosAnswer)
+                {
+                    await _tephrosClient.SendTextMessageAsync(
+                        Chat.Id, "Bravo, what a smart Nekhros )",
+                        replyToMessageId: message.MessageId,
+                        allowSendingWithoutReply: true);
+                }
+            }
         }
     }
 }

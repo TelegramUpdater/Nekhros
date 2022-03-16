@@ -1,5 +1,4 @@
 using Nekhros;
-using Nekhros.Clients;
 using TelegramUpdater.Hosting;
 
 IHost host = Host.CreateDefaultBuilder(args)
